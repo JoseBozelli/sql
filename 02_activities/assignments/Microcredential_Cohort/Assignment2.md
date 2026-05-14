@@ -56,7 +56,8 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+If the architecture would allow changes to be retained, we will likely be using INSERT command to add/update customer address. In that scenario the CUSTOMER_ADDRESS TABLE might have the following schema: customer_id (PK), street_number (PK), street (PK), unit_number, city (PK), province/state (PK), country (PK), postal code (PK), is_it_current_address?. 
+On the other hand, if the archictecture would NOT allow changes to be retained and instead would overwrite address info, we will likely be usin UPDATE command to add/update customer address. In that scenario the CUSTOMER_ADDRESS TABLE might have the following schema: customer_id (PK), street_number (PK), street (PK), unit_number, city (PK), province/state (PK), country (PK), postal code (PK). 
 ```
 
 ***
